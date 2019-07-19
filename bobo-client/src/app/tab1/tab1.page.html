@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Hellpee
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card"
+              routerLink="/helpee"
+              [queryParams]="{name: i.name, description: i.description}"
+              *ngFor="let i of hellpees">
+      <img src="/assets/shapes.svg" alt="" />
+      <ion-card-header>
+        <ion-card-title>{{ i.name }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p>{{ i.description }}</p>
+      </ion-card-content>
+    </ion-card>
+</ion-content>
