@@ -7,36 +7,42 @@
 </ion-header>
 
 <ion-content>
-    <div class="category-wrap">
-        <div class="category">
-            <ion-icon class="food" name="ios-water"></ion-icon>
-            Food
-        </div>
-
-        <div class="category">
-            <ion-icon class="daily" name="ios-shirt"></ion-icon>
-            Daily Necessity
-        </div>
-
-        <div class="category">
-            <ion-icon class="medical" name="ios-medkit"></ion-icon>
-            Medical Supply
-        </div>
-
-        <div class="category">
-            <ion-icon class="baby" name="ios-nutrition"></ion-icon>
-            For Babies
-        </div>
-
-        <div class="category">
-            <ion-icon class="education" name="ios-bookmarks"></ion-icon>
-            Education
-        </div>
-
-        <div class="category">
-            <ion-icon class="animal" name="logo-octocat"></ion-icon>
-            Animals
+    <div class="mbsc-grid">
+        <div class="mbsc-row mbsc-justify-content-center mbsc-no-padding">
+            <div class="mbsc-col-12 mbsc-col-sm-6 mbsc-col-lg-4 mbsc-col-xl-3"
+                 [attr.data-selected]="product._quantity ? true : null"
+                 id="product-list" *ngFor="let product of products">
+                <mbsc-card>
+                    <img [src]="product.img" alt="" class="product-image" draggable="false">
+                    <mbsc-card-content>
+                        <mbsc-card-title>{{product.name}}</mbsc-card-title>
+                        <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                            <p class="mbsc-txt-muted">{{product.price}}</p>
+                            <div item-end>
+                                <button ion-button color="primary" (click)="product._quantity = product._quantity - 1">-</button>
+                                <input ion-button clear type="tel" [(ngModel)]="product._quantity" name="quantity" class="input-quantity" />
+                                <button ion-button color="primary" (click)="product._quantity = product._quantity + 1">+</button>
+                            </div>
+                        </div>
+                    </mbsc-card-content>
+                </mbsc-card>
+            </div>
         </div>
     </div>
 </ion-content>
+
+<ion-footer>
+    <ion-list no-margin>
+        <ion-item no-padding>
+            <ion-label padding-left>
+                <strong>Checkout : </strong>
+                <span> {{finalValue | price}} Dai </span>
+            </ion-label>
+            <button [disabled]="!finalValue" item-end ion-button color="primary" (click)="Purchase()" icon-left>
+                <ion-icon name="cart"></ion-icon>
+                Purchase
+            </button>
+        </ion-item>
+    </ion-list>
+</ion-footer>
 
