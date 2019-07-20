@@ -1,34 +1,29 @@
-.category-wrap {
-  padding: 13px 0 16px 16px;
-  display: flex;
-  flex-wrap: wrap;
-
-  .category {
-    margin: 0 16px 16px 0;
-    width: calc(50% - 16px);
-    height: 100px;
-    background-color: #fff;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    padding: 13px 16px;
-    font-size: 20px;
-    font-weight: bold;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    -webkit-border-radius: 8px;
-    -moz-border-radius: 8px;
-    border-radius: 8px;
-    font-size: 15px;
-    text-align: center;
-
-  }
+.image-container {
+  min-height: 200px;
+  background-size: cover;
 }
 
-
-ion-icon {
-  zoom:2.0;
+button.item-button,
+.input-quantity {
+  height: 3.6rem;
+  font-size: 1.4rem;
+  padding: 0 1.1em;
 }
 
-.food{
-  padding: 4px 4px;
+#product-list .input-quantity {
+  padding: 0;
+  width: 30px;
+}
+
+ion-footer button[icon-only] {
+  padding: 0 1.1em;
+}
+
+ion-item {
+  transition: all 0.2s ease;
+  border-left: 0 solid red;
+}
+
+ion-item[data-selected] {
+  border-left: 5px solid red;
 }
