@@ -10,6 +10,6 @@ export class HellpeeService {
   }
 
   getHellpees() {
-      return this.http.get(this.serverURL + '/hellpees');
+      return this.http.get(this.serverURL + '/helpees');
   }
 }
