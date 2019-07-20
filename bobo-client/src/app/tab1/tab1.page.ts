@@ -7,7 +7,7 @@ import {HellpeeService} from '../../shared/services/hellpee.service';
     styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page implements OnInit {
-    hellpees = [];
+    helpees = [];
 
     constructor(private hellpeeService: HellpeeService) {
     }
@@ -15,7 +15,7 @@ export class Tab1Page implements OnInit {
     ngOnInit() {
         this.hellpeeService.getHellpees()
             .subscribe((data: any) => {
-                this.hellpees = data.hellpees;
+                this.helpees = data.helpees;
             });
     }
 }

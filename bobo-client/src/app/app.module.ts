@@ -10,6 +10,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {HellpeeService} from '../shared/services/hellpee.service';
 import {HttpClientModule} from '@angular/common/http';
+import {UserService} from '../shared/services/user.service';
 
 @NgModule({
     declarations: [AppComponent],
@@ -25,6 +26,7 @@ import {HttpClientModule} from '@angular/common/http';
         SplashScreen,
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
         HellpeeService,
+        UserService,
     ],
     bootstrap: [AppComponent]
 })

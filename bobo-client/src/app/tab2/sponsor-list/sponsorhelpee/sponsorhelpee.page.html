@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            {{ name }}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <img class="photo"
+         src="/assets/shapes.svg" alt="" />
+
+    <div class="title">
+        {{name}}
+    </div>
+
+    <div class="description">
+        {{description}}
+    </div>
+
+    <div class="use-list">
+        사용내역
+    </div>
+
+    <ion-list class="item-list">
+
+        <ion-item>
+            <ion-label>Pokémon Yellow</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Mega Man X</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>The Legend of Zelda</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Pac-Man</ion-label>
+        </ion-item>
+        <ion-item>
+            <ion-label>Super Mario World</ion-label>
+        </ion-item>
+    </ion-list>
+
+    <ion-button expand="block" routerLink="/donate">
+        Donate!
+    </ion-button>
+</ion-content>
+

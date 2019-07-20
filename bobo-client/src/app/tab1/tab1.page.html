@@ -10,7 +10,7 @@
     <ion-card class="welcome-card"
               routerLink="/helpee"
               [queryParams]="{name: i.name, description: i.description}"
-              *ngFor="let i of hellpees">
+              *ngFor="let i of helpees">
       <img src="/assets/shapes.svg" alt="" />
       <ion-card-header>
         <ion-card-title>{{ i.name }}</ion-card-title>
