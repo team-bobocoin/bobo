@@ -1,0 +1,62 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Sign up
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="role-wrap">
+        <button class="role-select-btn"
+                [ngClass]="{active: role === 'helpee'}"
+                (click)="role = 'helpee'"
+                type="button">
+            Helpee
+        </button>
+
+        <button class="role-select-btn"
+                [ngClass]="{active: role === 'helper'}"
+                (click)="role = 'helper'"
+                type="button">
+            Helper
+        </button>
+    </div>
+
+    <form class="form" [formGroup]="signupForm" (ngSubmit)="signup()">
+        <ion-item>
+            <ion-label position="stacked">Name</ion-label>
+            <ion-input placeholder="Name" formControlName="name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">ID</ion-label>
+            <ion-input placeholder="Enter Email" type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input placeholder="Enter Password" type="password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Password Confirm</ion-label>
+            <ion-input placeholder="Type Password Again" type="password" formControlName="confirmPassword"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Information</ion-label>
+            <textarea class="information" rows="4" placeholder="Information" formControlName="description"></textarea>
+        </ion-item>
+
+        <ion-button class="submit-btn"
+                    expand="block" fill="outline"
+                    type="submit">
+            Sign up
+        </ion-button>
+    </form>
+</ion-content>
+
+
+
+

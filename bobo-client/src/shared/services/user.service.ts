@@ -18,4 +18,9 @@ export class UserService {
             withCredentials: true,
         });
     }
+    logout() {
+        return this.http.get(this.serverURL + '/logout', {
+            withCredentials: true,
+        });
+    }
 }

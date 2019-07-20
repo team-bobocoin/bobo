@@ -14,4 +14,10 @@ export class HellpeeService {
           withCredentials: true,
       });
   }
+
+  getHelpee(id: number) {
+      return this.http.get(`${this.serverURL}/helpees/${id}`, {
+          withCredentials: true,
+      });
+  }
 }
