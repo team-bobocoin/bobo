@@ -19,3 +19,5 @@ $ npm start
 ```bash
 $ npm run build
 ```
+
+npm i -g ionic

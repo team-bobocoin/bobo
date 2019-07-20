@@ -1,0 +1,41 @@
+language: node_js
+
+node_js: 10.15.3
+
+install:
+    - npm ci
+
+env:
+    - ROOT_USER=root ROOT_PASSWORD=root1234 MONGO_USER=tsetUser PASSWORD=user1234 MONGO_DATABASE=testDB MONGO_VERSION=4.0.9
+install:
+
+before_script:
+    - docker run -e MONGO_INITDB_ROOT_USERNAME=$ROOT_USER -e MONGO_INITDB_ROOT_PASSWORD=$ROOT_PASSWORD -p 27017:27017 -d --name mongo_local mongo:$MONGO_VERSION
+    - sleep 10
+    - "docker exec mongo_local mongo -u $ROOT_USER -p $ROOT_PASSWORD --eval \"db=db.getSiblingDB('$MONGO_DATABASE');db.createUser({user: '$MONGO_USER', pwd: '$PASSWORD', roles: ['dbOwner']});\""
+
+script:
+    - SESSION_SECRET=secret MONGODB_URI=mongodb://$MONGO_USER:$PASSWORD@localhost:27017/$MONGO_DATABASE npm test
+
+# language: node_js
+
+# env:
+#   matrix:
+#     - MONGODB=4.0.4
+
+# install:
+#   - wget http://fastdl.mongodb.org/linux/mongodb-linux-x86_64-${MONGODB}.tgz
+#   - tar xzf mongodb-linux-x86_64-${MONGODB}.tgz
+#   - ${PWD}/mongodb-linux-x86_64-${MONGODB}/bin/mongod --version
+#   - npm i
+
+# before_script:
+#   - mkdir ${PWD}/mongodb-linux-x86_64-${MONGODB}/data
+#   - ${PWD}/mongodb-linux-x86_64-${MONGODB}/bin/mongod --dbpath ${PWD}/mongodb-linux-x86_64-${MONGODB}/data --fork --syslog
+
+# script:
+#     - cd $TRAVIS_BUILD_DIR && npm run build
+#     - cd $TRAVIS_BUILD_DIR && npm run test
+
+# after_script:
+#   - pkill mongod
