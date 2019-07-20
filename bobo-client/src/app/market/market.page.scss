@@ -1,0 +1,33 @@
+.category-wrap {
+  padding: 13px 0 16px 16px;
+  display: flex;
+  flex-wrap: wrap;
+
+  .category {
+    margin: 0 16px 16px 0;
+    width: calc(50% - 16px);
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    padding: 13px 16px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+    font-size: 15px;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+
+ion-icon {
+  zoom:2.0;
+}
+
+
+

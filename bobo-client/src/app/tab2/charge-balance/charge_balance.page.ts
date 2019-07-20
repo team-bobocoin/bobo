@@ -1,13 +1,13 @@
 import {Component} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
-import {UserService} from '../../shared/services/user.service';
+import {UserService} from '../../../shared/services/user.service';
 
 @Component({
-    selector: 'app-signup',
-    templateUrl: 'signup.page.html',
-    styleUrls: ['signup.page.scss']
+    selector: 'app-tab2',
+    templateUrl: 'charge_balance.page.html',
+    styleUrls: ['charge_balance.page.scss']
 })
-export class SignupPage {
+export class ChargeBalancePage {
     role = 'helper';
 
     controls = {
@@ -30,7 +30,7 @@ export class SignupPage {
         };
         this.userService.signup(params)
             .subscribe((data: any) => {
-                history.back();
+                console.log(data);
             });
     }
 }
