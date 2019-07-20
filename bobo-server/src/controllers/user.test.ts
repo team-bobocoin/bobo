@@ -1,7 +1,7 @@
-import { connectDB } from '../config/database';
+import {connectDB} from '../config/database';
 import Passport from '../models/Passport';
 import User from '../models/User';
-import { down, server } from '../tests/bootstrap';
+import {down, server} from '../tests/bootstrap';
 
 describe('UserController', () => {
     beforeAll(async () => {
@@ -56,8 +56,7 @@ describe('UserController', () => {
                     })
                     .expect(400)
                     .then((res) => {
-                        expect(res.body[0].msg).
-                            toEqual('Passwords do not match');
+                        expect(res.body[0].msg).toEqual('Passwords do not match');
                     });
             });
         });
@@ -72,9 +71,8 @@ describe('UserController', () => {
                     })
                     .expect(400)
                     .then((res) => {
-                        expect(res.body[0].msg).
-                            toEqual('Password must be at least 6 characters ' +
-                                'long');
+                        expect(res.body[0].msg).toEqual('Password must be at least 6 characters ' +
+                            'long');
                     });
             });
         });
@@ -88,7 +86,7 @@ describe('UserController', () => {
             });
 
             it('returns 400 error', async () => {
-                const res =  await server.post('/signup')
+                const res = await server.post('/signup')
                     .send({
                         email: 'hannut1@naver.com',
                         password: 'yunseok2',
@@ -103,7 +101,7 @@ describe('UserController', () => {
 
         describe('with wrong role', () => {
             it('returns error', async () => {
-                const res =  await server.post('/signup')
+                const res = await server.post('/signup')
                     .send({
                         email: 'hannut1@naver.com',
                         password: 'yunseok2',
@@ -118,10 +116,12 @@ describe('UserController', () => {
 
     describe('Post /signin', () => {
         describe('with valid information', () => {
+            const role = 'helper';
+
             beforeEach(async () => {
                 const user = await User.create({
                     email: 'hannut1@naver.com',
-                    role: 'helper',
+                    role,
                 });
 
                 await Passport.create({
@@ -130,15 +130,16 @@ describe('UserController', () => {
                 });
             });
 
-            it('returns 200', () => {
-                return server.post('/signin')
+            it('returns 200', async () => {
+                const res = await server.post('/signin')
                     .send({
                         email: 'hannut1@naver.com',
                         password: 'yunseok2',
-                    })
-                    .then((res) => {
-                        expect(res.body.message).toMatch('ok');
                     });
+
+                const user = res.body;
+
+                expect(user.role).toBe(role);
             });
         });
 
@@ -163,8 +164,7 @@ describe('UserController', () => {
                     })
                     .expect(400)
                     .then((res) => {
-                        expect(res.body.message).
-                            toMatch('Password cannot be blank');
+                        expect(res.body.message).toMatch('Password cannot be blank');
                     });
             });
         });
@@ -309,9 +309,8 @@ describe('UserController', () => {
                     .set('cookie', cookie)
                     .expect(400)
                     .then((res) => {
-                        expect(res.body.message).
-                            toMatch('password must be at least 4 characters ' +
-                                'long');
+                        expect(res.body.message).toMatch('password must be at least 4 characters ' +
+                            'long');
                     });
             });
         });
@@ -326,9 +325,8 @@ describe('UserController', () => {
                     .set('cookie', cookie)
                     .expect(400)
                     .then((res) => {
-                        expect(res.body.message).
-                            toMatch('newPassword must be at least 4 ' +
-                                'characters long');
+                        expect(res.body.message).toMatch('newPassword must be at least 4 ' +
+                            'characters long');
                     });
             });
         });
@@ -344,8 +342,7 @@ describe('UserController', () => {
                     .set('cookie', cookie)
                     .expect(400)
                     .then((res) => {
-                        expect(res.body.message).
-                            toMatch('Passwords do not match');
+                        expect(res.body.message).toMatch('Passwords do not match');
                     });
             });
         });

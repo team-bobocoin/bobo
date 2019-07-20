@@ -1,6 +1,5 @@
-import { NextFunction, Request, Response } from 'express';
+import { Request, Response } from 'express';
 import passport from 'passport';
-import { IVerifyOptions } from 'passport-local';
 
 import Passport from '../models/Passport';
 import User from '../models/User';
@@ -68,7 +67,7 @@ export let login = (req: Request, res: Response) => {
 
             req.session.user = user;
 
-            res.status(200).send({message: 'ok'});
+            res.status(200).send(user);
         });
     })(req, res);
 };
