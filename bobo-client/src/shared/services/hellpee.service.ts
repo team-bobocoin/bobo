@@ -10,6 +10,8 @@ export class HellpeeService {
   }
 
   getHellpees() {
-      return this.http.get(this.serverURL + '/helpees');
+      return this.http.get(this.serverURL + '/helpees', {
+          withCredentials: true,
+      });
   }
 }

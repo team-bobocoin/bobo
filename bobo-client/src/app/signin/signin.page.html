@@ -1,0 +1,35 @@
+<script src="../../shared/services/user.service.ts"></script>
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Sign in
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <form class="login" [formGroup]="signinForm" (ngSubmit)="signin()">
+
+        <ion-item>
+            <ion-label position="stacked">ID</ion-label>
+            <ion-input placeholder="Enter Email" type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+            <ion-label position="stacked">Password</ion-label>
+            <ion-input placeholder="Enter Password" type="password" formControlName="password"></ion-input>
+        </ion-item>
+
+        <ion-button class="signin" color="primary" type="submit">Sign In</ion-button>
+
+        <div class="or">
+            OR
+        </div>
+
+        <ion-button class="signin" color="secondary" routerLink="/signup">Sign up</ion-button>
+
+    </form>
+</ion-content>
+
+
