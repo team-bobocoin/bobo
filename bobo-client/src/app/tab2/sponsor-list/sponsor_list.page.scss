@@ -1,0 +1,34 @@
+
+.welcome-card {
+  width:  90%;
+  display:block;
+
+  .image {
+    width: 80px;
+    height: 80px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    float: left;
+    margin-bottom: 10%;
+  }
+
+  p {
+    margin-left: 35%;
+  }
+
+  .amount {
+    font-size: larger;
+  }
+}
+
+//.input-wrapper {
+//    display: flex;
+//    flex-direction: inherit;
+//    align-items: inherit;
+//    align-self: stretch;
+//    text-overflow: ellipsis;
+//    box-sizing: border-box;
+//    flex: 1 1 0%;
+//    overflow: hidden;
+//}

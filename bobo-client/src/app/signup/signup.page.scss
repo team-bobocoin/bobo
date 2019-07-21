@@ -1,0 +1,39 @@
+.role-wrap {
+  padding-top: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .role-select-btn {
+    width: 120px;
+    height: 120px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #E0E0E0;
+
+    &:last-child {
+      margin-left: 24px;
+    }
+
+    &.active {
+      background-color: #2196F3;
+    }
+  }
+}
+
+.form {
+  margin-top: 16px;
+
+  .information {
+    width: 100%;
+  }
+
+  .submit-btn {
+    margin: 16px auto 0;
+    width: 90%;
+  }
+}

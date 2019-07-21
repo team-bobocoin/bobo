@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { Router } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -13,7 +14,15 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../tab1/tab1.module#Tab1PageModule'
-          }
+          },
+          {
+            path: 'helpee/:id',
+            loadChildren: '../tab1/helpee/helpee.module#HelpeeModule'
+          },
+          {
+            path: 'donate',
+            loadChildren: '../tab1/helpee/donate/donate.module#DonateModule'
+          },
         ]
       },
       {
@@ -30,7 +39,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
+            loadChildren: '../market/market.module#MarketPageModule'
           }
         ]
       },

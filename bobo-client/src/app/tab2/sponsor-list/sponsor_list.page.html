@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            My Donations
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="welcome-card"
+              routerLink="/sponsorhelpee"
+              [queryParams]="{_id: i._id, name: i.name, description: i.description}"
+              *ngFor="let i of helpees">
+        <ion-card-header>
+            <ion-card-title>{{ i.name }}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <img class="image" src="/assets/shapes.svg" alt="" />
+            <p class="description">{{ i.description }}</p>
+            <br />
+            <p class="amount"><strong>DONATED 100 DAI</strong></p>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

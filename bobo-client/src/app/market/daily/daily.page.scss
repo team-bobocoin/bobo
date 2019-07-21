@@ -1,0 +1,29 @@
+.image-container {
+  min-height: 200px;
+  background-size: cover;
+}
+
+button.item-button,
+.input-quantity {
+  height: 3.6rem;
+  font-size: 1.4rem;
+  padding: 0 1.1em;
+}
+
+#product-list .input-quantity {
+  padding: 0;
+  width: 30px;
+}
+
+ion-footer button[icon-only] {
+  padding: 0 1.1em;
+}
+
+ion-item {
+  transition: all 0.2s ease;
+  border-left: 0 solid red;
+}
+
+ion-item[data-selected] {
+  border-left: 5px solid red;
+}

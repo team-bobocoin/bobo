@@ -1,0 +1,45 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>
+            Market
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="category-wrap">
+
+        <button class="category" [ngClass]="{active: category === 'food'}"
+        (click)="category = 'food'">
+            <ion-icon class="food" name="ios-water"></ion-icon>
+            Food
+        </button>
+
+
+        <button class="category" routerLink="/daily" >
+            <ion-icon class="daily" name="ios-shirt"></ion-icon>
+            Daily Necessity
+        </button>
+
+        <button class="category">
+            <ion-icon class="medical" name="ios-medkit"></ion-icon>
+            Medical Supply
+        </button>
+
+        <button class="category">
+            <ion-icon class="baby" name="ios-nutrition"></ion-icon>
+            For Babies
+        </button>
+
+        <button class="category">
+            <ion-icon class="education" name="ios-bookmarks"></ion-icon>
+            Education
+        </button>
+
+        <button class="category">
+            <ion-icon class="animal" name="logo-octocat"></ion-icon>
+            Animals
+        </button>
+    </div>
+</ion-content>
+
