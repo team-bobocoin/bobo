@@ -21,7 +21,9 @@ import {TransactionService} from '../shared/services/transaction.service';
         FormsModule,
         MbscModule,
         BrowserModule,
-        IonicModule.forRoot(),
+        IonicModule.forRoot({
+            mode: 'ios',
+        }),
         AppRoutingModule,
         HttpClientModule,
     ],
