@@ -19,7 +19,7 @@ export const getHelpeeByID = async (req: Request, res: Response) => {
     const id = req.params.id;
 
     try {
-        const helpee = await User.findOne({ _id: id }, 'name description');
+        const helpee = await User.findOne({ _id: id }, 'name description address');
 
         res.status(200).send(helpee);
     } catch (err) {

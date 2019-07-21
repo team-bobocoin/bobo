@@ -4,6 +4,7 @@ import passport from 'passport';
 import Passport from '../models/Passport';
 import User from '../models/User';
 import { UserModel } from '../models/User';
+import { createKeyPair, faucet } from '../services/cosmos.service';
 
 export const signup = async (req: Request, res: Response) => {
     req.check('email', 'Email is not valid').isEmail();
@@ -23,12 +24,19 @@ export const signup = async (req: Request, res: Response) => {
     let newUser: any;
 
     try {
+        const keyPair = await createKeyPair();
+
+        await faucet(keyPair);
+
         const query = {
             email: req.body.email,
             role: req.body.role,
             name: req.body.name,
             description: req.body.description,
+            address: keyPair.address,
+            privateKey: keyPair.privateKey,
         };
+
         newUser = await User.create(query);
 
         await Passport.create({

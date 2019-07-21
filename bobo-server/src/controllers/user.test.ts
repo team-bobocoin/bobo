@@ -27,9 +27,14 @@ describe('UserController', () => {
                         role: 'helper',
                     });
 
-                expect(res.status).toEqual(200);
-            });
+                const user = await User.findOne({
+                    email: 'hannut1@naver.com',
+                });
 
+                expect(res.status).toEqual(200);
+                expect(user.address.length).toBe(45);
+                expect(user.privateKey.length).toBe(64);
+            });
         });
 
         describe('without email', () => {

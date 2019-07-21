@@ -18,6 +18,7 @@ const createDefaultUser = () => {
 
             const newUser = await User.create({
                 email: defaultUser.email,
+                role: 'helper',
             });
 
             await Passport.create({

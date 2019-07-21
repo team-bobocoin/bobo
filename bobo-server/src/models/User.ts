@@ -7,6 +7,10 @@ import { MongooseAutoIncrementID } from 'mongoose-auto-increment-reworked';
 export type UserModel = mongoose.Document & {
     email: string,
     role: string,
+    name: string,
+    description: string,
+    address: string,
+    privateKey: string,
 };
 
 const name = 'User';
@@ -18,6 +22,8 @@ const schema = new mongoose.Schema({
     role: { type: String, required: true, enum: ['helper', 'helpee'] },
     name: String,
     description: String,
+    address: String,
+    privateKey: String,
 }, {
     timestamps: true,
 });
@@ -26,7 +32,7 @@ try {
     User = mongoose.model(name);
 } catch (err) {
     new MongooseAutoIncrementID(schema, name).applyPlugin();
-    User = mongoose.model(name, schema, undefined, false);
+    User = mongoose.model(name, schema, undefined, true);
 }
 
 export default User;
