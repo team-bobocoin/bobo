@@ -1,7 +1,7 @@
 <ion-header>
     <ion-toolbar>
         <ion-title>
-            hi
+            Donation
         </ion-title>
     </ion-toolbar>
 </ion-header>
@@ -14,28 +14,38 @@
     </ion-item>
 
     <div class="buttons">
-        <ion-button class="donatebutton" routerLink="/donate" size="small"
+        <ion-button class="donatebutton" size="small"
                     (click)="plusMoney(5)">
             5DAI
         </ion-button>
-        <ion-button class="donatebutton" routerLink="/donate" size="small"
+        <ion-button class="donatebutton" size="small"
                     (click)="plusMoney(10)">
             10DAI
         </ion-button>
-        <ion-button class="donatebutton" routerLink="/donate" size="small"
+        <ion-button class="donatebutton" size="small"
                     (click)="plusMoney(30)">
             30DAI
         </ion-button>
-        <ion-button class="donatebutton" routerLink="/donate" size="small"
+        <ion-button class="donatebutton" size="small"
                     (click)="plusMoney(50)">
             50DAI
         </ion-button>
     </div>
 
+    <ion-item>
+        <ion-label position="floating">Leave a message</ion-label>
+
+        <ion-textarea class=""
+                      [(ngModel)]="memo"
+                      placeholder="I love you"
+                      type="text"></ion-textarea>
+    </ion-item>
+
     <div class="donate-button">
-      <ion-button expand="block" routerLink="/donate">
-          Donate!
-      </ion-button>
+        <ion-button expand="block"
+                    (click)="donates()">
+            Donate!
+        </ion-button>
     </div>
 </ion-content>
 

@@ -1,7 +1,6 @@
 
 .welcome-card {
   width:  90%;
-  height: 100px;
   display:block;
 
   .image {
@@ -10,6 +9,16 @@
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
     border-radius: 50%;
+    float: left;
+    margin-bottom: 10%;
+  }
+
+  p {
+    margin-left: 35%;
+  }
+
+  .amount {
+    font-size: larger;
   }
 }
 

@@ -11,13 +11,12 @@
     <ion-card>
         <ion-card-header>
             <ion-card-subtitle>My Balance</ion-card-subtitle>
-            <ion-card-title>300DAI
-                <ion-button class="deposit">
-                    Deposit
-                </ion-button></ion-card-title>
-
-
-
+            <ion-card-title>{{amount}}DAI
+                <ion-button class="faucet"
+                            (click)="faucet()">
+                    Faucet
+                </ion-button>
+            </ion-card-title>
         </ion-card-header>
 
         <ion-card-content class="article">
@@ -28,7 +27,7 @@
 
     <ion-card>
         <ion-item>
-            <ion-icon name="ios-card" slot="start" ></ion-icon>
+            <ion-icon name="ios-card" slot="start"></ion-icon>
             <ion-label>Connected Cards</ion-label>
             <ion-button fill="outline" slot="end" (click)="presentAlert()">View</ion-button>
         </ion-item>
@@ -40,8 +39,8 @@
     </ion-card>
 
     <ion-card>
-        <ion-item  routerLink="/sponsor-list">
-            <img class="sponsor" src="assets/hand-shake.png" slot ="start">
+        <ion-item routerLink="/sponsor-list">
+            <img class="sponsor" src="assets/hand-shake.png" slot="start">
             <ion-label>Your Donations</ion-label>
         </ion-item>
 
@@ -51,7 +50,7 @@
             <ion-label>Settings</ion-label>
         </ion-item>
 
-        <ion-item (click) = "logout()">
+        <ion-item (click)="logout()">
             <ion-icon name="ios-log-out" slot="start"></ion-icon>
             <ion-label>Log out</ion-label>
         </ion-item>

@@ -1,15 +1,14 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Hellpee
+      Helpee
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <ion-card class="welcome-card"
-              routerLink="/helpee"
-              [queryParams]="{_id: i._id}"
+              [routerLink]="['helpee', i._id]"
               *ngFor="let i of helpees">
       <img src="/assets/shapes.svg" alt="" />
       <ion-card-header>

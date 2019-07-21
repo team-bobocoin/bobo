@@ -5,6 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class PricePipe implements PipeTransform {
   transform(value: number, casasDecimais = 2) {
-    return (value / Math.pow(10, casasDecimais)).toFixed(casasDecimais).replace('.', ',')
+    return (value / Math.pow(10, casasDecimais)).toFixed(casasDecimais).replace('.', ',');
   }
 }

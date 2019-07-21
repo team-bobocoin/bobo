@@ -5,6 +5,7 @@ import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {ProductListPage} from './daily.page';
 import { PricePipe } from './price.pipe';
+import { MbscModule } from '@mobiscroll/angular';
 
 
 @NgModule({
@@ -12,6 +13,7 @@ import { PricePipe } from './price.pipe';
         IonicModule,
         CommonModule,
         FormsModule,
+        MbscModule,
         RouterModule.forChild([{path: '', component: ProductListPage}])
     ],
     declarations: [
