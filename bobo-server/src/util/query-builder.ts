@@ -22,7 +22,12 @@ export const build = (params: any) => {
         // Nothing here
     }
 
-    return [params.query, projection, options];
+    try {
+        const query = JSON.parse(params.query);
+        return [query, projection, options];
+    } catch (err) {
+        return [params.query, projection, options];
+    }
 };
 
 export const populate = (promise: any, paramsPopulates: any) => {
