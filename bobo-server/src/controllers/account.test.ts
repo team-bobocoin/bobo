@@ -4,7 +4,7 @@ import crypto from 'crypto';
 const cosmosjs = require('@cosmostation/cosmosjs');
 const secp256k1 = require('secp256k1');
 
-const url = 'http://10.100.0.54:1317';
+const url = 'http://localhost:1317';
 
 const chainId = 'charitychain';
 

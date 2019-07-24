@@ -14,7 +14,7 @@ switch (ENVIRONMENT) {
         envFile = '.env.test';
         break;
     default:
-        envFile = '.env.dev';
+        envFile = '.env.test';
 }
 
 logger.debug('current environment: ', ENVIRONMENT);

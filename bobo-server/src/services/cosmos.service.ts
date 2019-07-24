@@ -2,7 +2,7 @@ import axios from 'axios';
 import crypto from 'crypto';
 import util from 'util';
 
-const url = 'http://10.100.0.54:1317';
+const url = 'http://localhost:1317';
 const chainId = 'charitychain';
 
 const cosmosjs = require('@cosmostation/cosmosjs');
