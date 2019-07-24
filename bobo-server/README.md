@@ -39,3 +39,18 @@ npm run watch
 ```bash
 npm run watch -- testFileName
 ```
+
+## Docker push
+
+```bash
+$ docker tag bobo-api-server hannut1/bobo-api-server
+$ docker push hannut1/bobo-api-server
+```
+
+## Docker pull
+
+```bash
+$ docker pull hannut1/bobo-api-server
+$ docker tag hannut1/bobo-api-server bobo-api-server
+$ MONGODB_URI=mongodb://user:user1234@172.17.0.1:27017/bobo SESSION_SECRET=secret docker-compose up
+```

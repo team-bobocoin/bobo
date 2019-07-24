@@ -4,8 +4,6 @@ This is client-side web application of [cosmos-intercharity-net](https://github.
 
 Every volunteer(helpee), or donator(helper) can join this network with simple signup process, and support or supported by each other. Helpers can donate tokens(DAI) for helpees who want to participate charity activities. The detailed usage of donation is traced and transparently opened for donators to monitor misused tokens.
 
-
-
 ## Install
 
 ```bash
@@ -18,10 +16,16 @@ $ npm i
 $ npm start
 ```
 
-## Build
+## Build in production
 
 ```bash
-$ npm run build
+$ npm run build -- --prod=true
 ```
 
-npm i -g ionic
+## Upload
+
+```bash
+$ BUCKET=www.give-to.me
+$ aws s3 rm s3://$BUCKET  --include "*" --recursive
+$ aws s3 cp www s3://$BUCKET --recursive --exclude ".DS_Store" --acl public-read
+```

@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+    serverURL: 'http://52.79.144.52',
 };
