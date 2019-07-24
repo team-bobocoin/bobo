@@ -11,7 +11,7 @@ const options: CorsOptions = {
     preflightContinue: false,
     methods: ['GET', 'PUT', 'POST', 'DELETE', 'OPTIONS'],
     origin: process.env.NODE_ENV === 'production'
-    ?  allowOrigins
+    ?  true
     : true,
 };
 

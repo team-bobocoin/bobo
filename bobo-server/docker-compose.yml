@@ -1,0 +1,27 @@
+
+version: "3"
+services:
+  express:
+    image: bobo-api-server
+    build:
+      dockerfile: Dockerfile
+      context: .
+    restart: always
+    environment:
+      - HOST=0.0.0.0
+      - PORT=4000
+      - MONGODB_URI=${MONGODB_URI}
+      - SESSION_SECRET=${SESSION_SECRET}
+    expose:
+      - "4000"
+    command: node dist/server.js
+
+  nginx:
+    image: nginx:1.16
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx:/etc/nginx/conf.d
+    depends_on:
+      - express
