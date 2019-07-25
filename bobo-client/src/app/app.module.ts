@@ -14,6 +14,13 @@ import {HttpClientModule} from '@angular/common/http';
 import {UserService} from '../shared/services/user.service';
 import {TransactionService} from '../shared/services/transaction.service';
 
+// Image Uploading
+import { IonicStorageModule } from '@ionic/storage';
+import {FileTransfer, FileUploadOptions, FileTransferObject} from '@ionic-native/file-transfer';
+import {File} from '@ionic-native/file';
+import {Camera} from '@ionic-native/camera';
+import {ImagePicker} from '@ionic-native/image-picker/ngx';
+
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
@@ -26,6 +33,7 @@ import {TransactionService} from '../shared/services/transaction.service';
         }),
         AppRoutingModule,
         HttpClientModule,
+        IonicStorageModule.forRoot(),
     ],
     providers: [
         StatusBar,
@@ -33,7 +41,8 @@ import {TransactionService} from '../shared/services/transaction.service';
         {provide: RouteReuseStrategy, useClass: IonicRouteStrategy},
         HellpeeService,
         UserService,
-        TransactionService
+        ImagePicker,
+        TransactionService,
     ],
     bootstrap: [AppComponent]
 })

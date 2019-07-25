@@ -1,5 +1,7 @@
 {
   "name": "bobo-client",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

@@ -26,7 +26,7 @@ export const signup = async (req: Request, res: Response) => {
     try {
         const keyPair = await createKeyPair();
 
-        await faucet(keyPair);
+        // await faucet(keyPair);
 
         const query = {
             email: req.body.email,
