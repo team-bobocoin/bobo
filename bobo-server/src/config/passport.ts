@@ -40,7 +40,7 @@ passport.use(new LocalStrategy({ usernameField: 'email' },
             const isMatch = await userPassport.comparePassword(password);
 
             if (!isMatch) {
-                return done({message: 'User not found.'});
+                return done({message: 'Password wrong.'});
             }
 
             done(undefined, user);

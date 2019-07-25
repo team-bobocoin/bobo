@@ -22,7 +22,7 @@ export class Tab1Page implements OnInit {
             .subscribe((data: any) => {
                 this.helpees = data.helpees;
             }, async (err: HttpErrorResponse) => {
-                switch(err.status) {
+                switch (err.status) {
                     case 401:
                         const alert = await this.alertController.create({
                             header: 'Alert',

@@ -19,7 +19,6 @@ export class TransactionService {
 
     constructor(private http: HttpClient) {
     }
-
     getTransactions(params: any) {
         return iif(() => {
                 return isExist(params);

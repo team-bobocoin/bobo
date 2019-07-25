@@ -1,5 +1,6 @@
 import express from 'express';
 import {Request, Response} from 'express';
+import * as path from 'path';
 
 import * as passportConfig from '../config/passport';
 import * as cosmosController from '../controllers/cosmos';
@@ -18,6 +19,10 @@ const router = express.Router();
 
 router.get('/', (req: Request, res: Response) => {
     res.send('Hello wrold');
+});
+
+router.get('/genesisFile', (req: Request, res: Response) => {
+    res.sendFile(path.join(__dirname, '../../public/genesis.json'));
 });
 
 router.post('/signup', userController.signup);
