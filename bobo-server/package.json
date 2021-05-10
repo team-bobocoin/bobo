@@ -36,7 +36,7 @@
         "flightplan": "^0.6.20",
         "global": "^4.3.2",
         "helmet": "3.16.0",
-        "lodash": "^4.17.15",
+        "lodash": "^4.17.21",
         "moment-timezone": "0.5.23",
         "mongoose": "5.4.19",
         "mongoose-auto-increment-reworked": "1.2.1",
