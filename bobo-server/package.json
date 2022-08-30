@@ -37,7 +37,7 @@
         "global": "^4.3.2",
         "helmet": "3.16.0",
         "lodash": "^4.17.15",
-        "moment-timezone": "0.5.23",
+        "moment-timezone": "0.5.35",
         "mongoose": "5.4.19",
         "mongoose-auto-increment-reworked": "1.2.1",
         "mysql2": "1.6.5",
